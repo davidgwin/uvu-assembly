@@ -1,0 +1,60 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "UVU Assembly language",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#directives"
+		},
+		{
+			"include": "#characters"
+		},
+		{
+			"include": "#comments"
+		}
+
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.asm",
+				"match": "\\b(TRP|CMP|OR|AND|DIV|MUL|SUB|ADI|ADD|LDB|STB|LDR|STR|LDA|MOV|BRZ|BLT|BGT|BNZ|JMR|JMP)\\b"
+			}]
+		
+		},
+		"directives": {
+			"patterns": [{
+				"name": "keyword.other.asm",
+				"match": "^[\\s]*(\\.BYT|\\.INT)|[\\s]+(\\.BYT|\\.INT)\\b"
+			}]
+		
+		},
+		"characters": {
+			"name": "characters.quoted.asm",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.asm",
+					"match": "\\\\.|."
+				}
+			]
+		},
+		"comments":{
+			"name": "comment",
+			"patterns": [
+				{
+					"name":"comment.line.number-sign" ,
+					"match": "#.*"
+				},
+				{
+					"name": "comment.line.semicolon",
+					"match": ";.*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.uvu-assembly"
+}

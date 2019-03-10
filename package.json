@@ -1,0 +1,25 @@
+{
+    "name": "uvu-asm",
+    "displayName": "uvu-asm",
+    "description": "language support for uvu-asm ",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "asm",
+            "aliases": ["UVU Assembly language", "asm"],
+            "extensions": [".asm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "asm",
+            "scopeName": "source.uvu-assembly",
+            "path": "./syntaxes/asm.tmLanguage.json"
+        }]
+    }
+}
